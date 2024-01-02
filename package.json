@@ -1,6 +1,6 @@
 {
   "name": "create-jeasx",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a cli to create a jeasx project via 'npm create jeasx'",
   "keywords": [
     "jsx",

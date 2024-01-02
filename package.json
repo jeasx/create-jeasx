@@ -1,0 +1,25 @@
+{
+  "name": "create-jeasx",
+  "version": "0.0.0",
+  "description": "a cli to create a jeasx project via 'npm create jeasx'",
+  "keywords": [
+    "jsx",
+    "ssr",
+    "node"
+  ],
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/jeasx/create-jeasx.git"
+  },
+  "author": {
+    "name": "Maik Jablonski (Neoskop GmbH)",
+    "email": "jablonski@neoskop.de"
+  },
+  "type": "module",
+  "bin": {
+    "create-jeasx": "./cli.js"
+  },
+  "dependencies": {
+    "giget": "1.2.1"
+  }
+}

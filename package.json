@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "a utility to bootstrap a jeasx project via npm",
   "keywords": [
+    "jeasx",
     "jsx",
     "ssr",
     "node",
@@ -14,7 +15,7 @@
   },
   "author": {
     "name": "Maik Jablonski (Neoskop GmbH)",
-    "email": "jablonski@neoskop.de"
+    "email": "jeasx@neoskop.de"
   },
   "type": "module",
   "bin": {

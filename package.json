@@ -11,7 +11,8 @@
   ],
   "license": "MIT",
   "repository": {
-    "url": "git+https://github.com/jeasx/create-jeasx.git"
+    "type": "git",
+    "url": "https://github.com/jeasx/create-jeasx.git"
   },
   "author": {
     "name": "Maik Jablonski (Neoskop GmbH)",

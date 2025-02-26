@@ -23,6 +23,6 @@
     "create-jeasx": "./cli.js"
   },
   "dependencies": {
-    "giget": "1.2.4"
+    "giget": "2.0.0"
   }
 }

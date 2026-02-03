@@ -1,6 +1,6 @@
 {
   "name": "create-jeasx",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "a utility to bootstrap a jeasx project via npm",
   "keywords": [
     "cli",

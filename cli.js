@@ -14,14 +14,11 @@ await new Command()
   .option("-f,--force", "force installation, overwrite target directory")
   .action(async (name, { force, withVercel, withDocker }) => {
     try {
-      const { source, dir } = await downloadTemplate(
-        "github:jeasx/quickstart",
-        {
-          install: true,
-          force: force,
-          dir: name,
-        }
-      );
+      const { source, dir } = await downloadTemplate("github:jeasx/quickstart", {
+        install: true,
+        force: force,
+        dir: name,
+      });
 
       const target = path.relative(process.cwd(), dir);
 
@@ -33,12 +30,12 @@ await new Command()
         resourcesToRemove.push("api", "vercel.json");
       }
       resourcesToRemove.forEach((pathname) =>
-        fs.rmSync(path.join(target, pathname), { recursive: true })
+        fs.rmSync(path.join(target, pathname), { recursive: true }),
       );
 
       console.info(
         `\n✅ Extracted \x1b[35m${source}\x1b[0m into \x1b[35m${target}\x1b[0m.`,
-        `\n⭐ Start development: \x1b[33mcd ${target} && npm run build && npm run dev\x1b[0m`
+        `\n⭐ Start development: \x1b[33mcd ${target} && npm run build && npm run dev\x1b[0m`,
       );
     } catch (e) {
       console.error(`❌ ${e}`);

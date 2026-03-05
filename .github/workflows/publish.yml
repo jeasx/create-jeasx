@@ -33,7 +33,7 @@ jobs:
           git config user.email "mail@jeasx.dev"
 
       - run: npm ci
-      - run: npm run build
+      # - run: npm run build
 
       - run: npm version ${{ inputs.version }}
       - run: git push --follow-tags

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version bump"
+        description: "Version"
         required: true
         type: choice
         options:
@@ -21,23 +21,13 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v6
-
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
-          registry-url: https://registry.npmjs.org
-
-      - name: Configure git
-        run: |
-          git config user.name "Maik Jablonski"
-          git config user.email "mail@jeasx.dev"
+          node-version: 25
 
       - run: npm ci
-      # - run: npm run build
-
       - run: npm version ${{ inputs.version }}
       - run: git push --follow-tags
-
       - run: npm publish
 
       - name: Create GitHub release

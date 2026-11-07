@@ -29,7 +29,13 @@
   "bin": {
     "create-jeasx": "./cli.js"
   },
+  "files": [
+    "cli.js"
+  ],
   "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
   "dependencies": {
     "commander": "15.1.0",
     "giget": "3.3.1"

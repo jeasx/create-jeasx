@@ -4,10 +4,11 @@ import { Command } from "commander";
 import { downloadTemplate } from "giget";
 import fs from "node:fs";
 import path from "node:path";
+import { styleText } from "node:util";
 
 await new Command()
   .name("create-jeasx")
-  .description("Bootstrap a Jeasx project.")
+  .description("Bootstrap a new Jeasx project from the quickstart template with a single command.")
   .argument("[name]", "target directory", "jeasx-quickstart")
   .option("--with-vercel", "install with Vercel support")
   .option("--with-docker", "install with Docker support")
@@ -20,22 +21,25 @@ await new Command()
         dir: name,
       });
 
-      const target = path.relative(process.cwd(), dir);
-
       const resourcesToRemove = [];
-      if (withDocker === undefined) {
+      if (!withDocker) {
         resourcesToRemove.push("Dockerfile", ".dockerignore");
       }
-      if (withVercel === undefined) {
+      if (!withVercel) {
         resourcesToRemove.push("api", "vercel.json");
       }
       resourcesToRemove.forEach((pathname) =>
-        fs.rmSync(path.join(target, pathname), { recursive: true }),
+        fs.rmSync(path.join(dir, pathname), { recursive: true, force: true }),
       );
 
+      const target = path.relative(process.cwd(), dir);
+      const start = target
+        ? `cd ${/\s/.test(target) ? `"${target}"` : target} && npm run dev`
+        : "npm run dev";
+
       console.info(
-        `\n✅ Extracted \x1b[35m${source}\x1b[0m into \x1b[35m${target}\x1b[0m.`,
-        `\n⭐ Start development: \x1b[33mcd ${target} && npm run dev\x1b[0m`,
+        `\n✅ Extracted ${styleText("magenta", source)} into ${styleText("magenta", target || ".")}.`,
+        `\n⭐ Start development: ${styleText("yellow", start)}`,
       );
     } catch (e) {
       console.error(`❌ ${e}`);

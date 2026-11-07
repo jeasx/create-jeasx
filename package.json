@@ -23,7 +23,7 @@
   },
   "type": "module",
   "dependencies": {
-    "commander": "15.0.0",
+    "commander": "15.1.0",
     "giget": "3.3.1"
   }
 }

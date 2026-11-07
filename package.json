@@ -1,6 +1,6 @@
 {
   "name": "create-jeasx",
-  "version": "1.3.9",
+  "version": "1.4.0",
   "description": "Bootstrap a new Jeasx project from the quickstart template with a single command: npm create jeasx",
   "keywords": [
     "jeasx",
